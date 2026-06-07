@@ -12,7 +12,7 @@
 
 <meta name="author" content="Uwakmfon Paul" />
 
-<meta name="date" content="2026-06-03" />
+<meta name="date" content="2026-06-06" />
 
 <title>Introduction to statease</title>
 
@@ -341,7 +341,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Introduction to statease</h1>
 <h4 class="author">Uwakmfon Paul</h4>
-<h4 class="date">2026-06-03</h4>
+<h4 class="date">2026-06-06</h4>
 
 
 
@@ -934,9 +934,11 @@ pass/fail outcome:</p>
 <span id="cb17-20"><a href="#cb17-20" tabindex="-1"></a><span class="co">#&gt; -----------------------------------------------------------------</span></span>
 <span id="cb17-21"><a href="#cb17-21" tabindex="-1"></a><span class="co">#&gt;   Interpretation:</span></span>
 <span id="cb17-22"><a href="#cb17-22" tabindex="-1"></a><span class="co">#&gt;   The result is not statistically significant (p = 0.9132 &gt; alpha 0.05).</span></span>
-<span id="cb17-23"><a href="#cb17-23" tabindex="-1"></a><span class="co">#&gt;   Group 2 had a higher median (75.00 vs 74.00).</span></span>
+<span id="cb17-23"><a href="#cb17-23" tabindex="-1"></a><span class="co">#&gt;   Values in Group 2 appear stochastically greater than values in Group 1. (Reported medians: Group 1 = 74.00, Group 2 = 75.00)</span></span>
 <span id="cb17-24"><a href="#cb17-24" tabindex="-1"></a><span class="co">#&gt;   Effect size is negligible (r = 0.011).</span></span>
-<span id="cb17-25"><a href="#cb17-25" tabindex="-1"></a><span class="co">#&gt; -----------------------------------------------------------------</span></span></code></pre></div>
+<span id="cb17-25"><a href="#cb17-25" tabindex="-1"></a><span class="co">#&gt;   Note: Mann-Whitney tests stochastic superiority,</span></span>
+<span id="cb17-26"><a href="#cb17-26" tabindex="-1"></a><span class="co">#&gt;   not differences in medians.</span></span>
+<span id="cb17-27"><a href="#cb17-27" tabindex="-1"></a><span class="co">#&gt; -----------------------------------------------------------------</span></span></code></pre></div>
 </div>
 <div id="wilcoxon-signed-rank-test" class="section level3">
 <h3>Wilcoxon Signed Rank Test</h3>
@@ -961,9 +963,11 @@ pass/fail outcome:</p>
 <span id="cb18-18"><a href="#cb18-18" tabindex="-1"></a><span class="co">#&gt; -----------------------------------------------------------------</span></span>
 <span id="cb18-19"><a href="#cb18-19" tabindex="-1"></a><span class="co">#&gt;   Interpretation:</span></span>
 <span id="cb18-20"><a href="#cb18-20" tabindex="-1"></a><span class="co">#&gt;   The result is statistically significant (p = 0.0000 &lt; alpha 0.05).</span></span>
-<span id="cb18-21"><a href="#cb18-21" tabindex="-1"></a><span class="co">#&gt;   Post-measurement median higher (74.00 vs 55.00).</span></span>
+<span id="cb18-21"><a href="#cb18-21" tabindex="-1"></a><span class="co">#&gt;   Post-measurement values appear stochastically greater than pre-measurement values. (Reported medians: Post = 74.00, Pre = 55.00)</span></span>
 <span id="cb18-22"><a href="#cb18-22" tabindex="-1"></a><span class="co">#&gt;   Effect size is large (r = 0.737).</span></span>
-<span id="cb18-23"><a href="#cb18-23" tabindex="-1"></a><span class="co">#&gt; -----------------------------------------------------------------</span></span></code></pre></div>
+<span id="cb18-23"><a href="#cb18-23" tabindex="-1"></a><span class="co">#&gt;   Note: Wilcoxon test assesses stochastic superiority,</span></span>
+<span id="cb18-24"><a href="#cb18-24" tabindex="-1"></a><span class="co">#&gt;   not differences in medians.</span></span>
+<span id="cb18-25"><a href="#cb18-25" tabindex="-1"></a><span class="co">#&gt; -----------------------------------------------------------------</span></span></code></pre></div>
 </div>
 <div id="kruskal-wallis-test" class="section level3">
 <h3>Kruskal-Wallis Test</h3>
@@ -991,18 +995,22 @@ pass/fail outcome:</p>
 <span id="cb19-21"><a href="#cb19-21" tabindex="-1"></a><span class="co">#&gt; -----------------------------------------------------------------</span></span>
 <span id="cb19-22"><a href="#cb19-22" tabindex="-1"></a><span class="co">#&gt;   Interpretation:</span></span>
 <span id="cb19-23"><a href="#cb19-23" tabindex="-1"></a><span class="co">#&gt;   The result is statistically significant (p = 0.0000 &lt; alpha 0.05).</span></span>
-<span id="cb19-24"><a href="#cb19-24" tabindex="-1"></a><span class="co">#&gt;   Effect size is large (eta^2 = 0.2420).</span></span>
-<span id="cb19-25"><a href="#cb19-25" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb19-26"><a href="#cb19-26" tabindex="-1"></a><span class="co">#&gt; -- Post-Hoc Pairwise Comparisons (Wilcoxon) ---------------------</span></span>
-<span id="cb19-27"><a href="#cb19-27" tabindex="-1"></a><span class="co">#&gt;   Hybrid vs Online</span></span>
-<span id="cb19-28"><a href="#cb19-28" tabindex="-1"></a><span class="co">#&gt;     p = 0.0006  [significant]</span></span>
-<span id="cb19-29"><a href="#cb19-29" tabindex="-1"></a><span class="co">#&gt;   Hybrid vs Traditional</span></span>
-<span id="cb19-30"><a href="#cb19-30" tabindex="-1"></a><span class="co">#&gt;     p = 0.0000  [significant]</span></span>
-<span id="cb19-31"><a href="#cb19-31" tabindex="-1"></a><span class="co">#&gt;   Online vs Traditional</span></span>
-<span id="cb19-32"><a href="#cb19-32" tabindex="-1"></a><span class="co">#&gt;     p = 0.0653  [not significant]</span></span>
-<span id="cb19-33"><a href="#cb19-33" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb19-34"><a href="#cb19-34" tabindex="-1"></a><span class="co">#&gt;   Note: Pairwise Wilcoxon tests used for post-hoc comparisons.</span></span>
-<span id="cb19-35"><a href="#cb19-35" tabindex="-1"></a><span class="co">#&gt; -----------------------------------------------------------------</span></span></code></pre></div>
+<span id="cb19-24"><a href="#cb19-24" tabindex="-1"></a><span class="co">#&gt;   The result is statistically significant (p = 0.0000 &lt; alpha 0.05).</span></span>
+<span id="cb19-25"><a href="#cb19-25" tabindex="-1"></a><span class="co">#&gt;   Effect size is large (eta^2 = 0.2420).</span></span>
+<span id="cb19-26"><a href="#cb19-26" tabindex="-1"></a><span class="co">#&gt;   Note: Kruskal-Wallis tests stochastic superiority</span></span>
+<span id="cb19-27"><a href="#cb19-27" tabindex="-1"></a><span class="co">#&gt;   across groups, not differences in medians.</span></span>
+<span id="cb19-28"><a href="#cb19-28" tabindex="-1"></a><span class="co">#&gt;   Medians are reported for descriptive purposes only.</span></span>
+<span id="cb19-29"><a href="#cb19-29" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb19-30"><a href="#cb19-30" tabindex="-1"></a><span class="co">#&gt; -- Post-Hoc Pairwise Comparisons (Wilcoxon) ---------------------</span></span>
+<span id="cb19-31"><a href="#cb19-31" tabindex="-1"></a><span class="co">#&gt;   Hybrid vs Online</span></span>
+<span id="cb19-32"><a href="#cb19-32" tabindex="-1"></a><span class="co">#&gt;     p = 0.0006  [significant]</span></span>
+<span id="cb19-33"><a href="#cb19-33" tabindex="-1"></a><span class="co">#&gt;   Hybrid vs Traditional</span></span>
+<span id="cb19-34"><a href="#cb19-34" tabindex="-1"></a><span class="co">#&gt;     p = 0.0000  [significant]</span></span>
+<span id="cb19-35"><a href="#cb19-35" tabindex="-1"></a><span class="co">#&gt;   Online vs Traditional</span></span>
+<span id="cb19-36"><a href="#cb19-36" tabindex="-1"></a><span class="co">#&gt;     p = 0.0653  [not significant]</span></span>
+<span id="cb19-37"><a href="#cb19-37" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb19-38"><a href="#cb19-38" tabindex="-1"></a><span class="co">#&gt;   Note: Pairwise Wilcoxon tests used for post-hoc comparisons.</span></span>
+<span id="cb19-39"><a href="#cb19-39" tabindex="-1"></a><span class="co">#&gt; -----------------------------------------------------------------</span></span></code></pre></div>
 <hr />
 </div>
 </div>
@@ -1139,18 +1147,22 @@ use!</p>
 <span id="cb24-23"><a href="#cb24-23" tabindex="-1"></a><span class="co">#&gt; -----------------------------------------------------------------</span></span>
 <span id="cb24-24"><a href="#cb24-24" tabindex="-1"></a><span class="co">#&gt;   Interpretation:</span></span>
 <span id="cb24-25"><a href="#cb24-25" tabindex="-1"></a><span class="co">#&gt;   The result is statistically significant (p = 0.0000 &lt; alpha 0.05).</span></span>
-<span id="cb24-26"><a href="#cb24-26" tabindex="-1"></a><span class="co">#&gt;   Effect size is large (eta^2 = 0.2420).</span></span>
-<span id="cb24-27"><a href="#cb24-27" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb24-28"><a href="#cb24-28" tabindex="-1"></a><span class="co">#&gt; -- Post-Hoc Pairwise Comparisons (Wilcoxon) ---------------------</span></span>
-<span id="cb24-29"><a href="#cb24-29" tabindex="-1"></a><span class="co">#&gt;   Hybrid vs Online</span></span>
-<span id="cb24-30"><a href="#cb24-30" tabindex="-1"></a><span class="co">#&gt;     p = 0.0006  [significant]</span></span>
-<span id="cb24-31"><a href="#cb24-31" tabindex="-1"></a><span class="co">#&gt;   Hybrid vs Traditional</span></span>
-<span id="cb24-32"><a href="#cb24-32" tabindex="-1"></a><span class="co">#&gt;     p = 0.0000  [significant]</span></span>
-<span id="cb24-33"><a href="#cb24-33" tabindex="-1"></a><span class="co">#&gt;   Online vs Traditional</span></span>
-<span id="cb24-34"><a href="#cb24-34" tabindex="-1"></a><span class="co">#&gt;     p = 0.0653  [not significant]</span></span>
-<span id="cb24-35"><a href="#cb24-35" tabindex="-1"></a><span class="co">#&gt; </span></span>
-<span id="cb24-36"><a href="#cb24-36" tabindex="-1"></a><span class="co">#&gt;   Note: Pairwise Wilcoxon tests used for post-hoc comparisons.</span></span>
-<span id="cb24-37"><a href="#cb24-37" tabindex="-1"></a><span class="co">#&gt; -----------------------------------------------------------------</span></span></code></pre></div>
+<span id="cb24-26"><a href="#cb24-26" tabindex="-1"></a><span class="co">#&gt;   The result is statistically significant (p = 0.0000 &lt; alpha 0.05).</span></span>
+<span id="cb24-27"><a href="#cb24-27" tabindex="-1"></a><span class="co">#&gt;   Effect size is large (eta^2 = 0.2420).</span></span>
+<span id="cb24-28"><a href="#cb24-28" tabindex="-1"></a><span class="co">#&gt;   Note: Kruskal-Wallis tests stochastic superiority</span></span>
+<span id="cb24-29"><a href="#cb24-29" tabindex="-1"></a><span class="co">#&gt;   across groups, not differences in medians.</span></span>
+<span id="cb24-30"><a href="#cb24-30" tabindex="-1"></a><span class="co">#&gt;   Medians are reported for descriptive purposes only.</span></span>
+<span id="cb24-31"><a href="#cb24-31" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb24-32"><a href="#cb24-32" tabindex="-1"></a><span class="co">#&gt; -- Post-Hoc Pairwise Comparisons (Wilcoxon) ---------------------</span></span>
+<span id="cb24-33"><a href="#cb24-33" tabindex="-1"></a><span class="co">#&gt;   Hybrid vs Online</span></span>
+<span id="cb24-34"><a href="#cb24-34" tabindex="-1"></a><span class="co">#&gt;     p = 0.0006  [significant]</span></span>
+<span id="cb24-35"><a href="#cb24-35" tabindex="-1"></a><span class="co">#&gt;   Hybrid vs Traditional</span></span>
+<span id="cb24-36"><a href="#cb24-36" tabindex="-1"></a><span class="co">#&gt;     p = 0.0000  [significant]</span></span>
+<span id="cb24-37"><a href="#cb24-37" tabindex="-1"></a><span class="co">#&gt;   Online vs Traditional</span></span>
+<span id="cb24-38"><a href="#cb24-38" tabindex="-1"></a><span class="co">#&gt;     p = 0.0653  [not significant]</span></span>
+<span id="cb24-39"><a href="#cb24-39" tabindex="-1"></a><span class="co">#&gt; </span></span>
+<span id="cb24-40"><a href="#cb24-40" tabindex="-1"></a><span class="co">#&gt;   Note: Pairwise Wilcoxon tests used for post-hoc comparisons.</span></span>
+<span id="cb24-41"><a href="#cb24-41" tabindex="-1"></a><span class="co">#&gt; -----------------------------------------------------------------</span></span></code></pre></div>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="co"># Auto regression</span></span>
 <span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="fu">analyze</span>(<span class="at">formula =</span> exam_score <span class="sc">~</span> pre_test, <span class="at">data =</span> tutorial_data)</span>
 <span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a><span class="co">#&gt; [statease] Numeric predictor detected -&gt; Running Simple Linear Regression</span></span>

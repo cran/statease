@@ -1,7 +1,7 @@
-7d79ee3730c5d8b386d95d0e0533ff08 *DESCRIPTION
+1439f521c31b43d3b1857c31d20fd59e *DESCRIPTION
 3f15993876640b698ecb2fa2f795b888 *LICENSE
 af87ea8ba5de863234826dd2681777ee *NAMESPACE
-f6f4989825b022845a8507de2a47edd2 *NEWS.md
+c696185399eb7ddb9acb433786e15fb3 *NEWS.md
 642245c9d8013cd3c57bf32943e6bb02 *R/analyze.R
 7153590453185dfa93221099e97a3d40 *R/anova2_interpret.R
 141284e2eb37825c7d7e1d813e917ce6 *R/anova_interpret.R
@@ -12,7 +12,7 @@ ba6c8b11640b1cb452192bc742902142 *R/describe.R
 96f8a975d50b14e93cd8645d75aba73d *R/logistic_interpret.R
 39b91a902748281b97ac5e6de10d42ad *R/manova_interpret.R
 e9b5d974d656019b836c6b27b1ccc1be *R/mlr_interpret.R
-1dea9db2fae057ff56dc36e75d96a2b9 *R/nonparam_interpret.R
+4444b61efd1f33e25e8b5eae68abb3e5 *R/nonparam_interpret.R
 74a9948edd48b892d70bdc8e6c787178 *R/reg_interpret.R
 ef8541267bb3ef003589ac49391915fa *R/statease-package.R
 9d0cd4728d2d891eb1e2f1ed6c72baf7 *R/ttest_interpret.R
@@ -20,7 +20,7 @@ ef8541267bb3ef003589ac49391915fa *R/statease-package.R
 f362645e12898666e49559c577fb9b0e *build/vignette.rds
 5a678764ff7b80acb233baad6a2ab71a *inst/doc/statease.R
 7ea004e7f4f93b6e6d6c4a36c6cf7421 *inst/doc/statease.Rmd
-c57eac86b7ce9aee448c67ebdd99f307 *inst/doc/statease.html
+6b193d8f45aed148d4bbd8c3666b5c39 *inst/doc/statease.html
 50e0f4dd13bd1b5e7a488b3a30f10fa8 *man/analyze.Rd
 cb25440503c6af204a46f6ddf23ddb28 *man/anova2_interpret.Rd
 85abf3f03d20a8b239ac020d76b8e49a *man/anova_interpret.Rd
