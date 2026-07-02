@@ -1,6 +1,6 @@
 # statease <img src="man/figures/logo.png" align="right" height="139" />
 
-![CRAN Downloads](https://cranlogs.r-pkg.org/badges/statease)
+![CRAN Total](https://cranlogs.r-pkg.org/badges/grand-total/statease)
 ![CRAN Version](https://www.r-pkg.org/badges/version/statease)
 
 > Simplified statistical analysis with plain-English interpretation for R
@@ -24,6 +24,11 @@ For the development version from GitHub:
 devtools::install_github("DevWebWacky/statease")
 ```
 
+## Live App
+Try statease directly in your browser without installing R:
+
+🌐 [Launch statease Shiny App](https://devwebwacky.shinyapps.io/statease/)
+
 ## Functions
 
 | Function | What it does |
@@ -32,9 +37,11 @@ devtools::install_github("DevWebWacky/statease")
 | `describe()` | Descriptive statistics with interpretation |
 | `ttest_interpret()` | T-tests with Cohen's d and CI interpretation |
 | `anova_interpret()` | One-way ANOVA with Tukey post-hoc and eta squared |
-| `anova2_interpret()` | Two-way ANOVA with interaction effects |
+| `anova2_interpret()` | Two-way ANOVA with Type II/III SS |
 | `manova_interpret()` | MANOVA with Pillai's trace and follow-up ANOVAs |
 | `chisq_interpret()` | Chi-square test with Cramer's V effect size |
+| `fisher_interpret()` | Fisher's Exact Test with Odds Ratio |
+| `mcnemar_interpret()` | McNemar's Test for paired categorical data |
 | `cor_interpret()` | Correlation analysis (Pearson, Spearman, Kendall) |
 | `reg_interpret()` | Simple linear regression with diagnostics |
 | `mlr_interpret()` | Multiple linear regression with diagnostics |
@@ -42,6 +49,9 @@ devtools::install_github("DevWebWacky/statease")
 | `mannwhitney_interpret()` | Mann-Whitney U test (non-parametric) |
 | `wilcoxon_interpret()` | Wilcoxon Signed Rank test (non-parametric) |
 | `kruskal_interpret()` | Kruskal-Wallis test with post-hoc comparisons |
+| `friedman_interpret()` | Friedman Test with Kendall's W |
+| `check_assumptions()` | Automated assumption checking before analysis |
+| `power_interpret()` | Statistical power analysis and sample size calculation |
 | `interpret_p()` | Standalone p-value interpreter |
 
 ## Usage
@@ -57,6 +67,10 @@ analyze(x = c(23, 45, 12, 67, 34), var_name = "Exam Scores")
 # Independent samples t-test (auto-detected)
 analyze(x = c(23,45,12,67,34), y = c(19,38,22,51,29),
         var_name = "Scores")
+
+# Check assumptions first
+analyze(x = c(23,45,12,67,34), y = c(19,38,22,51,29),
+        check = TRUE)
 
 # Non-parametric alternative (auto-detected)
 analyze(x = c(23,45,12,67,34), y = c(19,38,22,51,29),
@@ -79,9 +93,6 @@ df <- data.frame(
 )
 analyze(formula = score ~ group, data = df)
 
-# Kruskal-Wallis (non-parametric ANOVA alternative)
-analyze(formula = score ~ group, data = df, nonparam = TRUE)
-
 # Two-way ANOVA (auto-detected)
 df2 <- data.frame(
   score  = c(23,45,12,67,34,89,56,43,78,90,11,34),
@@ -97,21 +108,8 @@ df3 <- data.frame(
 )
 analyze(formula = exam_score ~ study_hours, data = df3)
 
-# Multiple linear regression (auto-detected)
-df4 <- data.frame(
-  exam_score  = c(23,45,12,67,34,89,56,43,78,90),
-  study_hours = c(2,5,1,7,3,9,6,4,8,10),
-  attendance  = c(60,80,50,90,70,95,85,75,88,92)
-)
-analyze(formula = exam_score ~ study_hours + attendance, data = df4)
-
-# MANOVA (auto-detected)
-df5 <- data.frame(
-  math    = c(23,45,12,67,34,89,56,43,78,90,11,34),
-  english = c(34,56,23,78,45,90,67,54,89,95,22,45),
-  group   = rep(c("A","B","C"), each = 4)
-)
-analyze(formula = cbind(math, english) ~ group, data = df5)
+# Power analysis
+analyze(test_type = "ttest.two", effect_size = 0.5)
 
 # Interpret any p-value
 interpret_p(0.03, context = "treatment vs control group")
@@ -127,6 +125,19 @@ Perfect for:
 
 ## Changelog
 
+### v1.3.0
+- Added `fisher_interpret()` for Fisher's Exact Test
+- Added `mcnemar_interpret()` for McNemar's Test
+- Added `friedman_interpret()` for Friedman Test
+- Added `check_assumptions()` for automated assumption checking
+- Added `power_interpret()` for power analysis and sample size
+- Added Shiny app via `run_app()` for point-and-click analysis
+- Updated `analyze()` with `check` and `test_type` arguments
+
+### v1.2.1
+- Fixed non-parametric interpretation — stochastic superiority
+  correctly reported instead of median differences
+
 ### v1.2.0
 - Added `mlr_interpret()` for multiple linear regression
 - Added `logistic_interpret()` for logistic regression
@@ -134,9 +145,7 @@ Perfect for:
 - Added `mannwhitney_interpret()` for Mann-Whitney U test
 - Added `wilcoxon_interpret()` for Wilcoxon Signed Rank test
 - Added `kruskal_interpret()` for Kruskal-Wallis test
-- Updated `analyze()` with `nonparam` argument for non-parametric routing
-- Fixed `anova2_interpret()` to use Type II/III SS via car::Anova()
-  instead of Type I SS for order-independent results
+- Updated `analyze()` with `nonparam` argument
 
 ### v1.1.0
 - Added `chisq_interpret()` for chi-square tests

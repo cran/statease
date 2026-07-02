@@ -207,3 +207,48 @@ analyze(
   data    = tutorial_data
 )
 
+## -----------------------------------------------------------------------------
+result <- fisher_interpret(
+  tutorial_data$method,
+  tutorial_data$passed_label
+)
+print(result)
+
+## -----------------------------------------------------------------------------
+pre_pass  <- sample(c("Yes","No"), 90, replace = TRUE, 
+                    prob = c(0.4, 0.6))
+post_pass <- sample(c("Yes","No"), 90, replace = TRUE, 
+                    prob = c(0.7, 0.3))
+
+result <- mcnemar_interpret(pre_pass, post_pass)
+print(result)
+
+## -----------------------------------------------------------------------------
+friedman_data <- data.frame(
+  score   = c(23,45,12,67,34,89,56,43,78,90,11,34),
+  time    = rep(c("T1","T2","T3"), each = 4),
+  subject = rep(1:4, times = 3)
+)
+
+result <- friedman_interpret(score ~ time | subject, 
+                             data = friedman_data)
+print(result)
+
+## -----------------------------------------------------------------------------
+result <- check_assumptions(
+  "ttest",
+  x = males,
+  y = females
+)
+print(result)
+
+## -----------------------------------------------------------------------------
+result <- power_interpret(
+  "ttest.two",
+  effect_size = 0.5
+)
+print(result)
+
+## ----eval=FALSE---------------------------------------------------------------
+# statease::run_app()
+
