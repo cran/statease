@@ -4,7 +4,7 @@
 \alias{reg_interpret}
 \title{Simple Linear Regression with Plain-English Interpretation}
 \usage{
-reg_interpret(formula, data, conf.level = 0.95)
+reg_interpret(formula, data, conf.level = 0.95, context = NULL)
 }
 \arguments{
 \item{formula}{A formula of the form outcome ~ predictor}
@@ -12,6 +12,9 @@ reg_interpret(formula, data, conf.level = 0.95)
 \item{data}{A data frame containing the variables}
 
 \item{conf.level}{Confidence level. Default 0.95.}
+
+\item{context}{Optional description of the study design or sampling
+method, echoed back in the printed report. Default NULL.}
 }
 \value{
 An object of class \code{statease_reg} containing regression

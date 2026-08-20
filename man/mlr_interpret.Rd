@@ -4,7 +4,7 @@
 \alias{mlr_interpret}
 \title{Multiple Linear Regression with Plain-English Interpretation}
 \usage{
-mlr_interpret(formula, data, conf.level = 0.95)
+mlr_interpret(formula, data, conf.level = 0.95, context = NULL)
 }
 \arguments{
 \item{formula}{A formula of the form outcome ~ predictor1 + predictor2 + ...}
@@ -12,6 +12,9 @@ mlr_interpret(formula, data, conf.level = 0.95)
 \item{data}{A data frame containing the variables}
 
 \item{conf.level}{Confidence level. Default 0.95.}
+
+\item{context}{Optional description of the study design or sampling
+method, echoed back in the printed report. Default NULL.}
 }
 \value{
 An object of class \code{statease_mlr} containing multiple

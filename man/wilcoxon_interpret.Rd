@@ -4,7 +4,13 @@
 \alias{wilcoxon_interpret}
 \title{Wilcoxon Signed Rank Test with Plain-English Interpretation}
 \usage{
-wilcoxon_interpret(x, y, conf.level = 0.95, var_name = "Variable")
+wilcoxon_interpret(
+  x,
+  y,
+  conf.level = 0.95,
+  var_name = "Variable",
+  context = NULL
+)
 }
 \arguments{
 \item{x}{A numeric vector (first measurement)}
@@ -14,6 +20,9 @@ wilcoxon_interpret(x, y, conf.level = 0.95, var_name = "Variable")
 \item{conf.level}{Confidence level. Default 0.95.}
 
 \item{var_name}{Optional label for the report. Default "Variable"}
+
+\item{context}{Optional description of the study design or sampling
+method, echoed back in the printed report. Default NULL.}
 }
 \value{
 An object of class \code{statease_wilcoxon} containing

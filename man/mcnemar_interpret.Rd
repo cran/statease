@@ -4,7 +4,7 @@
 \alias{mcnemar_interpret}
 \title{McNemar's Test with Plain-English Interpretation}
 \usage{
-mcnemar_interpret(x, y, conf.level = 0.95)
+mcnemar_interpret(x, y, conf.level = 0.95, context = NULL)
 }
 \arguments{
 \item{x}{A factor or character vector (first measurement)}
@@ -12,6 +12,9 @@ mcnemar_interpret(x, y, conf.level = 0.95)
 \item{y}{A factor or character vector (second measurement)}
 
 \item{conf.level}{Confidence level. Default 0.95.}
+
+\item{context}{Optional description of the study design or sampling
+method, echoed back in the printed report. Default NULL.}
 }
 \value{
 An object of class \code{statease_mcnemar} containing test

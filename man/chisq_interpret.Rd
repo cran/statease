@@ -4,7 +4,7 @@
 \alias{chisq_interpret}
 \title{Chi-Square Test with Plain-English Interpretation}
 \usage{
-chisq_interpret(x, y, correct = TRUE, conf.level = 0.95)
+chisq_interpret(x, y, correct = TRUE, conf.level = 0.95, context = NULL)
 }
 \arguments{
 \item{x}{A factor or character vector (first categorical variable)}
@@ -14,6 +14,9 @@ chisq_interpret(x, y, correct = TRUE, conf.level = 0.95)
 \item{correct}{Logical. Apply Yates continuity correction. Default TRUE.}
 
 \item{conf.level}{Confidence level. Default 0.95.}
+
+\item{context}{Optional description of the study design or sampling
+method, echoed back in the printed report. Default NULL.}
 }
 \value{
 An object of class \code{statease_chisq} containing test
